@@ -1,0 +1,62 @@
+/* Affects everything in <body> */
+body {
+    font-family: Arial, sans-serif; /* Sets a clean sans-serif font for all text. */
+    padding: 20px; /* Adds space between the body’s edge and the content. */
+    background: #f0f0f0; /* Light gray background for visual contrast. */
+}
+
+/* Affects everything in class="flashcard-container" */
+.flashcard-container {
+    display: flex; /* Lays out child .flashcard elements in a row. */
+    flex-wrap: wrap; /* Allows items to wrap to a new line if needed. */
+    gap: 20px; /* Adds 20px spacing between cards. */
+    justify-content: center; /* Centers the cards horizontally. */
+}
+
+/* Affects everything in class="flashcard" */
+.flashcard {
+    width: 200px; /* Defines a fixed width for each card. */
+    height: 120px; /* Defines a fixed height for each card. */
+    perspective: 1000px; /* Enables a 3D effect; lower values = more dramatic depth. */
+    flex-shrink: 0; /* Prevents the card from shrinking in smaller containers. */
+}
+
+/* Affects everything in class="card-inner" */
+.card-inner {
+    width: 100%;
+    height: 100%; 
+    position: relative; /* Sets a reference point for absolutely-positioned children (.card-front, .card-back). */
+    transition: transform 0.6s; /*  Animates flipping smoothly over 0.6 seconds. */
+    transform-style: preserve-3d; /* Preserves 3D space so both sides appear during flip. */
+    cursor: pointer; /* Changes the mouse cursor to a hand when hovering. */
+    display: flex; /* Centers content inside the card. */
+    justify-content: center; /* Centers the cards horizontally. */
+    align-items: center; /* Aligns card-inner center */
+}
+
+
+.card-front, .card-back {
+    position: absolute; /* Both sides sit in the same spot within .card-inner. */
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back of each side when it's not facing the viewer. */
+    border: 1px solid #ccc; /* Visual styles for the card. */
+    border-radius: 8px; /* Visual styles for the card. */
+    background: white; /* Visual styles for the card. */
+    display: flex; /* Centers the text in both front and back. */
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1); /* Adds subtle shadow to lift the card. */
+    box-sizing: border-box; /* Ensures padding and border don’t break the size. */
+}
+
+.card-back {
+    transform: rotateY(180deg); /* Rotates the back side of the card 180°. This makes it line up with .card-inner's flipped state, so when .card-inner rotates, the back side faces you. */
+}
+
+.flashcard.flipped .card-inner {
+    transform: rotateY(180deg); 
+} 
+
+

@@ -1,0 +1,20 @@
+https://roadmap.sh/projects/flash-cards
+
+Requirements
+You are required to develop a flash cards app with the following features:
+
+    Pre-defined flashcards with questions and answers
+    Progress bar to show the user’s progress
+    Ability to view flashcards one at a time and flip to reveal the answer
+    Simple navigation to cycle through the flashcards
+
+Level 1:
+1. Create 20 predefined questions and answer div
+2. Make them flashcards 
+3. Add interactivity such that clicking the flashcard would toggle between question and answer 
+
+Level 2:
+1. Hide all flashcards except the current one
+2. Add navigation buttons (Next / Previous)
+3. Add a progress bar
+4. Use JavaScript to manage card display and progressW
